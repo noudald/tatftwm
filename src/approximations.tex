@@ -1,0 +1,51 @@
+\section{Approximations}
+
+
+\subsection{Logarithm and exponential}
+
+The exponential constant is approximated as
+\begin{equation*}
+    e \approx 2.71828
+\end{equation*}
+
+For the logarithm and the exponential, we have the special constants.
+
+\begin{align*}
+    \log(1) &= 0,               & e^0 &= 1 \\
+    \log(2) &\approx 0.69314,   & e^{0.69314} &\approx 2 \\
+    \log(e) &= 1,               & e^{1} &= e \\
+    \log(10) &\approx 2.30258   & e^{2.30258} &\approx 10,
+\end{align*}
+
+Note that the Tayler expension of $e^x$ is
+\begin{equation*}
+    e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + ...,
+\end{equation*}
+So for small numbers $x \approx 0$ we have $e^x = 1 + x$.
+
+\begin{example}
+    This example is from Richard Feynman's autobiography ``Surely You're Joking Mr. Feynman''.
+    How to approximate $e^{3.3}$ fast?
+    Note that
+    \begin{equation*}
+        e^{3.3} = e^{2.30258} e^{1} e^{-0.00258}
+            \approx 10 \times e \times (1 - 0.00258)
+            = 10 \times e - 0.0258 \times e
+    \end{equation*}
+    So without effort we can approximate the $e^{3.3} \approx 10 e = 27.1$.
+    What's left to do is correct for the overestimation.
+    \begin{equation*}
+        \begin{split}
+            0.00258 \times e
+                &\approx 0.0258 \times 2.71828 \\
+                &\approx 0.026 \times 0.027 \\
+                &\approx 0.0001 \times (26 \times 27) \\
+                &\approx 0.0001 \times ((25 + 1) \times (25 + 2)) \\
+                &\approx 0.0001 \times (25^2 + 75 + 2) \\
+                &\approx 0.0001 \times (625 + 75 + 2) \\
+                &\approx 0.0702
+        \end{split}
+    \end{equation*}
+    Hence the final approximation is $e^{3.3} \approx 27.1828 - 0.0702 = 27.1126$.
+    The correct answer is $e^{3.3} = 27.1126389...$.
+\end{example}
